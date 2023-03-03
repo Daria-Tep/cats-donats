@@ -1,6 +1,5 @@
 //------------planet example
 let canvasPlanet = document.getElementById("planetCanvas");
-let toggleBtn = document.getElementById("togglePlanet");
 
 const fish = new Image();
 const cat = new Image();
@@ -30,7 +29,7 @@ function draw() {
         ((2 * Math.PI) / 60000) * time.getMilliseconds()
     );
 
-    ctx.translate(170, 0);
+    ctx.translate(230, 0);
 
     ctx.drawImage(cat, -12, -12, 80, 90);
 
@@ -62,7 +61,7 @@ function draw() {
 
 init();
 
-toggleBtn.addEventListener("click", () => {
+canvasPlanet.addEventListener("click", () => {
   if (animID) {
     window.cancelAnimationFrame(animID);
     animID = null;
