@@ -9,10 +9,8 @@ let starsItems = [
   { type: "small", x: "47%", y: "14%" },
   { type: "small", x: "61%", y: "9%" },
   { type: "small", x: "33%", y: "21%" },
-  { type: "big", x: "44%", y: "35%" },
   { type: "small", x: "15%", y: "34%" },
   { type: "small", x: "15%", y: "34%" },
-  { type: "small", x: "80%", y: "34%" },
   { type: "big", x: "93%", y: "30%" },
 ];
 

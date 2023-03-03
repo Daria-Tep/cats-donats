@@ -81,6 +81,11 @@ h2 {
   border-radius: 50%;
 }
 
+.light1 {
+  display: none;
+  z-index: 10;
+}
+
 @keyframes star {
   0% {
     opacity: 1;
