@@ -1,14 +1,20 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 body {
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 100px;
+    background-color: var(--main-bg-color);
+}
+
+a {
+    text-decoration: none;
 }
 
 h2 {
@@ -26,7 +32,7 @@ h2 {
     background-color: rgba(37, 37, 37, 0.89);
     margin-bottom: 70px;
 
-    background-image: url("./assets/img/donat.png");
+    background-image: url("../assets/img/donat.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 30%;
