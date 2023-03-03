@@ -1,98 +1,33 @@
-//------------planet example
-let canvasPlanet = document.getElementById("planetCanvas");
-
-const fish = new Image();
-const cat = new Image();
-fish.src = "./assets/img/fish.png";
-cat.src = "./assets/img/cat.png";
-
-function init() {
-  window.requestAnimationFrame(draw);
-}
-
-const ctx = canvasPlanet.getContext("2d");
-let animID = null;
-
-let isShowStars = false;
-
-function draw() {
-  if (ctx) {
-    ctx.globalCompositeOperation = "destination-over";
-    ctx.clearRect(0, 0, 700, 700);
-    ctx.save();
-    ctx.translate(350, 350);
-
-    // cat
-    let time = new Date();
-    ctx.rotate(
-      ((2 * Math.PI) / 60) * time.getSeconds() +
-        ((2 * Math.PI) / 60000) * time.getMilliseconds()
-    );
-
-    ctx.translate(230, 0);
-
-    ctx.drawImage(cat, -12, -12, 80, 90);
-
-    // fish
-    ctx.save();
-    ctx.rotate(
-      ((2 * Math.PI) / 6) * time.getSeconds() +
-        ((2 * Math.PI) / 6000) * time.getMilliseconds()
-    );
-    ctx.translate(70, 0);
-    ctx.drawImage(fish, 5, 5, 25, 25);
-
-    // star
-    ctx.beginPath();
-    ctx.arc(20, 15, 20, 0, Math.PI * 2, true);
-    ctx.moveTo(110, 75);
-    ctx.fillStyle = "rgba(255, 255, 255, 0.4)";
-    ctx.fill();
-    ctx.strokeStyle = "rgba(14, 51, 143, 1);";
-    ctx.stroke();
-
-    ctx.restore();
-
-    ctx.restore();
-
-    animID = window.requestAnimationFrame(draw);
-  }
-}
-
-init();
-
-canvasPlanet.addEventListener("click", () => {
-  if (animID) {
-    window.cancelAnimationFrame(animID);
-    animID = null;
-  } else {
-    window.requestAnimationFrame(draw);
-  }
-});
-
 //-----------color circles
 const colorCanvas = document.getElementById("colorCanvas");
+const body = document.querySelector("body");
 let isAnimationPlay = false;
 
 class ColorCanvas {
   canvas;
   ctx;
-  colors = ["#f0a40c", "#0c82f0", "#0ba313", "#c281c7", "#337a50"];
+  colors = ["#FFDEAD", "#DDA0DD", "#87CEEB", "#c281c7", "#CD5C5C"];
   texts = [
-    "SunYellow world",
-    "Blue world",
-    "Green world",
-    "Lilac world",
-    "SeaGreen world",
+    "Fact №1",
+    "Fact №2",
+    "Fact №3",
+    "Fact №4",
+    "Fact №5",
   ];
-  bigTexts = ["It's fine", "It's cool", "It's super", "It's magic", "It's travel"]
+  bigTexts = [
+    "Cats can jump up to six times their length.",
+    "Some cats can swim.",
+    "Some cats love the smell of chlorine.",
+    "A group of kittens is called a “kindle.”",
+    "Cat breeders are called “catteries.”",
+  ];
   currentColor = null;
-  currentText = null;
+  currentText = "touch for fact";
   currentBigText = null;
   timePrev;
 
   heightCanvas = 700;
-  widthCanvas = window.innerWidth;
+  widthCanvas = body.offsetWidth;
 
   constructor(canvas) {
     this.canvas = canvas;
@@ -106,6 +41,14 @@ class ColorCanvas {
       this.ctx.clearRect(0, 0, this.widthCanvas, this.heightCanvas);
       this.canvas.style.background = "grey";
       this.ctx.fill();
+
+      this.ctx.font = "48px sans-serif";
+      this.ctx.fillStyle = "#ffffff";
+      this.ctx.fillText(
+        this.currentText,
+        600,
+        350
+      );
       this.ctx.save();
     }
   }
@@ -125,7 +68,7 @@ class ColorCanvas {
     }
 
     let now = date.getTime();
-      let countMove = now - this.timePrev;
+    let countMove = now - this.timePrev;
 
     if (countMove < this.canvas.width * 1.4) {
       this.ctx.beginPath();
@@ -150,18 +93,18 @@ class ColorCanvas {
     }
   }
 
-  drawText(countMove) {
-    this.ctx.font = "48px sans-serif";
+  drawBigText(countMove) {
+    this.ctx.font = "68px sans-serif";
     this.ctx.fillStyle = "#ffffff";
     this.ctx.fillText(
       this.currentText,
-      this.widthCanvas - (countMove - this.widthCanvas / 2),
+      this.widthCanvas - (countMove - this.widthCanvas / 2) - 300,
       250
     );
   }
 
-  drawBigText(countMove) {
-    this.ctx.font = "68px sans-serif";
+  drawText(countMove) {
+    this.ctx.font = "48px sans-serif";
     this.ctx.fillStyle = "#ffffff";
     this.ctx.fontWeight = 800;
     this.ctx.fillText(
@@ -207,8 +150,10 @@ let canvasColor = new ColorCanvas(colorCanvas);
 canvasColor.init();
 
 colorCanvas.addEventListener("click", (e) => {
+  
   if (!isAnimationPlay) {
-    let x = e.pageX - canvasColor.canvas.offsetLeft;
+    let indent = (window.innerWidth - canvasColor.canvas.width) / 2;
+    let x = e.pageX - canvasColor.canvas.offsetLeft - indent;
     let y = e.pageY - canvasColor.canvas.offsetTop;
     canvasColor.onClick(x, y);
   }
