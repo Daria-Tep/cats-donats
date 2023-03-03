@@ -4,15 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Canvas example</title>
+    <title>Cats & Donats</title>
     <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/firstBlock.css" />
   </head>
   <body>
     <header class="mainHeader">
-      <span class="logo">C&d</span>
-      <nav class="mainMenu">
+      <span class="mainHeader__logo">C&d</span>
+      <nav class="mainHeader__mainMenu">
         <ul>
           <li><a href="#">item</a></li>
           <li><a href="#">item</a></li>
@@ -22,14 +23,29 @@
       </nav>
     </header>
 
-    <canvas id="planetCanvas" width="700px" height="700px">
-      ваш браузер не поддерживает тег canvas
-    </canvas>
-    <button id="togglePlanet">toggle</button>
- 
+    <div class="neonCircle"></div>
+    <section class="firstBlock">
+      <div class="firstBlock__left">
+        <h1 class="firstBlock__title">
+          Cats. <br />
+          Donats.
+        </h1>
+
+        <p class="firstBlock__paragraph">
+          Odit dignissimos iure veritatis temporibus, corporis sapiente
+          accusantium at sunt eaque natus fuga!
+        </p>
+      </div>
+
+      <canvas id="planetCanvas" width="700px" height="700px">
+        ваш браузер не поддерживает тег canvas
+      </canvas>
+    </section>
+
     <h2>Color circle</h2>
     <canvas id="colorCanvas"></canvas>
 
     <script src="./animation/index.js" type="module"></script>
+    <script src="./animation/stars.js" type="module"></script>
   </body>
 </html>
