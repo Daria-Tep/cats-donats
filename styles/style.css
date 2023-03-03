@@ -32,12 +32,9 @@ h2 {
   margin-top: 50px;
 }
 
-#canvasContainer {
-  border: 1px solid green;
-}
-
 #colorCanvas {
   margin-bottom: 150px;
+  border-radius: 250px 40px; 
 }
 
 .neonCircle {
