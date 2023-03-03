@@ -1,55 +1,83 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: var(--main-bg-color);
+}
+
+html {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--main-bg-color);
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  background-color: var(--main-bg-color);
+  margin: 0 auto;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 h2 {
-    color: green;
-    margin-bottom: 35px;
-    margin-top: 50px;
+  color: green;
+  margin-bottom: 35px;
+  margin-top: 50px;
 }
 
 #canvasContainer {
-    border: 1px solid green;
-}
-
-#planetCanvas {
-    border: 1px solid blue;
-    background-color: rgba(37, 37, 37, 0.89);
-    margin-bottom: 70px;
-
-    background-image: url("../assets/img/donat.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 30%;
-}
-
-#togglePlanet {
-    width: 190px;
-    height: 56px;
-    background-color: rgb(8, 104, 72);
-    border: none;
-    outline: none;
-    border-radius: 50px;
-    text-transform: uppercase;
-    color: aliceblue;
-    font-weight: 600;
+  border: 1px solid green;
 }
 
 #colorCanvas {
-    margin-bottom: 150px;
+  margin-bottom: 150px;
+}
+
+.neonCircle {
+  position: absolute;
+  z-index: 10;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: rgb(208, 168, 233);
+  background: radial-gradient(
+    circle,
+    rgba(208, 168, 233, 1) 3%,
+    rgba(141, 44, 218, 1) 46%,
+    rgba(87, 20, 138, 1) 100%
+  );
+  filter: blur(50px);
+  right: 0;
+  animation: 5s linear 1s infinite star;
+}
+
+.animateSmallStar {
+  filter: blur(2px);
+  animation: 3s linear 1s infinite star;
+}
+
+.animateBigStar {
+    filter: blur(3px);
+    animation: 5s linear 1s infinite star;
+  }
+
+@keyframes star {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

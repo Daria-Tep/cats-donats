@@ -9,27 +9,27 @@
   color: var(--main-text-color);
 }
 
-.logo {
+.mainHeader__logo {
     display: block;
     font-size: 48px;
     font-family: 'Shantell Sans', cursive;
 }
 
-.mainMenu ul {
+.mainHeader__mainMenu ul {
     display: flex;
     list-style-type: none;
     gap: 16px;
     text-transform: lowercase;
-    font-family: 'Shantell Sans', cursive;;
+    font-family: 'Shantell Sans', cursive;
     font-weight: 600;
     font-size: 22px;
 }
 
-.mainMenu li a {
+.mainHeader__mainMenu li a {
     color: var(--main-text-color);
     transition: color 0.3s ease-in-out;
 }
 
-.mainMenu li a:hover {
+.mainHeader__mainMenu li a:hover {
     color: var(--main-accept-color);
 }
