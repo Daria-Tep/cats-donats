@@ -1,1 +1,2 @@
-# canvas-example
+# Cats & Donats
+Project with cats
