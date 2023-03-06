@@ -34,7 +34,7 @@ h2 {
 
 #colorCanvas {
   margin-bottom: 150px;
-  border-radius: 250px 40px; 
+  border-radius: 250px 40px;
 }
 
 .neonCircle {
@@ -61,9 +61,30 @@ h2 {
 }
 
 .animateBigStar {
-    filter: blur(3px);
-    animation: 5s linear 1s infinite star;
-  }
+  filter: blur(3px);
+  animation: 5s linear 1s infinite star;
+}
+
+.light {
+  position: absolute;
+  display: none;
+  background: radial-gradient(
+    circle,
+    rgb(218, 181, 241) 3%,
+    rgb(138, 92, 175) 46%,
+    rgb(99, 65, 124) 100%
+  );
+  filter: blur(10px);
+  opacity: 0.5;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.light1 {
+  display: none;
+  z-index: 10;
+}
 
 @keyframes star {
   0% {
