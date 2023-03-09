@@ -1,30 +1,29 @@
 .cardsBlock {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 24px;
-    margin-bottom: 300px;
-    height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 300px;
+  height: 400px;
 }
 
 .cardsBlock__card {
-    position: relative;
-    width: 30%;
-    padding: 16px;
-    border-radius: 24px;
-    background-color:  #282828;
-    overflow: hidden;
-
+  position: relative;
+  width: 30%;
+  padding: 16px;
+  border-radius: 24px;
+  background-color: #282828;
+  overflow: hidden;
 }
 
 .cardsBlock__card h3 {
-    background-color:  inherit;
-    margin-bottom: 30px;
-    color: var(--main-text-color);
+  background-color: inherit;
+  margin-bottom: 30px;
+  color: var(--main-text-color);
 }
 
 .cardsBlock__card p {
-    background-color:  inherit;
-    color: #757575;
+  background-color: inherit;
+  color: #757575;
 }

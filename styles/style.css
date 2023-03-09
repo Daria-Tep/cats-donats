@@ -67,23 +67,20 @@ h2 {
 
 .light {
   position: absolute;
-  display: none;
+  display: block;
   background: radial-gradient(
     circle,
-    rgb(218, 181, 241) 3%,
-    rgb(138, 92, 175) 46%,
-    rgb(99, 65, 124) 100%
+    rgba(172, 128, 206, 0.521) 3%,
+    rgba(113, 58, 158, 0.603) 46%,
+    rgba(54, 15, 77, 0.541) 100%
   );
   filter: blur(10px);
   opacity: 0.5;
   width: 200px;
   height: 200px;
   border-radius: 50%;
-}
-
-.light1 {
-  display: none;
   z-index: 10;
+  opacity: 0;
 }
 
 @keyframes star {
